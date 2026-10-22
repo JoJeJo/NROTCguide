@@ -194,7 +194,7 @@ document.getElementById('askForm').addEventListener('submit', async (e) => {
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { show(false, 'Please enter a valid email address.'); return; }
   btn.disabled = true;
   try {
-    // FORMSPREE_FORM_ID: replace REPLACE_ME with the form ID after Jerom creates the Formspree form.
+    // Formspree endpoint wired 2026-10-22 (form xkjjwkkb).
     const fd = new FormData();
     fd.append('question', q);
     fd.append('email', em);
