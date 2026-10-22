@@ -611,7 +611,7 @@ Object.assign(window.UNIFORM_FIGURES, EXTRA_USMC);
           { key: "4c", label: "4/C", img: "/img/uniforms/navy-choker-4c.png" },
         ] },
       { key: "khaki", name: "Service Khakis", img: "/img/uniforms/navy-khaki.png",
-        when: "Daily wear — classroom and office.", keys: [],
+        when: "Daily wear — classroom and office.", keys: [], comingSoon: true,
         classVariants: [
           { key: "1c", label: "1/C", img: "/img/uniforms/navy-khaki.png" },
           { key: "2c", label: "2/C", img: "/img/uniforms/navy-khaki-2c.png" },
@@ -636,16 +636,16 @@ Object.assign(window.UNIFORM_FIGURES, EXTRA_USMC);
     marines: [
       { key: "sdb", name: "Service Dress Blues", img: "/img/uniforms/marine-sdb.png",
         when: "Ceremonies, inspections, formal events.",
-        keys: ["The red \u2018blood stripe\u2019 on the trousers honors Marine officers and NCOs killed in battle."] },
+        keys: ["The red \u2018blood stripe\u2019 on the trousers honors Marine officers and NCOs killed in battle."], comingSoon: true },
       { key: "choker", name: "Choker Whites", img: "/img/uniforms/marine-choker.png",
-        when: "The most formal ceremonies.", keys: [] },
+        when: "The most formal ceremonies.", keys: [], comingSoon: true },
       { key: "khaki", name: "Service Khakis", img: "/img/uniforms/marine-khaki.png",
-        when: "Daily wear — classroom and office.", keys: [] },
+        when: "Daily wear — classroom and office.", keys: [], comingSoon: true },
       { key: "summer", name: "Summer Whites", img: "/img/uniforms/marine-summer.png",
-        when: "Summer daily wear and ceremonies.", keys: [] },
+        when: "Summer daily wear and ceremonies.", keys: [], comingSoon: true },
       { key: "marpat", name: "MARPAT", img: "/img/uniforms/marine-marpat.png",
         when: "Field training, ranges, practical exercises.",
-        keys: ["The Eagle, Globe, and Anchor is woven into the camo pattern itself."] },
+        keys: ["The Eagle, Globe, and Anchor is woven into the camo pattern itself."], comingSoon: true },
       { key: "pt", name: "PT Gear", img: "/img/uniforms/marine-pt.png",
         when: "Physical training, PFT/CFT.", keys: [],
         sweatsImg: "/img/uniforms/marine-pt-sweats.png",
@@ -723,6 +723,10 @@ Object.assign(window.UNIFORM_FIGURES, EXTRA_USMC);
       if (pre.complete && pre.naturalWidth) done();
     };
     figEl.innerHTML = `<div class="ufig-col">${loaderHtml}${toggleHtml}</div>`;
+    if (u.comingSoon) {
+      figEl.innerHTML = `<div class="ufig-col"><div class="uphoto-wrap ucoming"><img class="ucoming-anchor" src="/img/icon.png" alt="" /><div class="ucoming-text">COMING SOON</div></div></div>`;
+      return;
+    }
     if (variants.length) {
       paintToggle();
       figEl.querySelectorAll('.usweats-btn').forEach(b => {
