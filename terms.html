@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — NROTC Guide</title>
+<link rel="icon" type="image/png" href="/img/icon.png">
+<meta name="description" content="NROTC Guide terms of use: educational purpose, sources, no warranties, and donation terms.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">NROTC GUIDE <span class="tag">UNOFFICIAL</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/prospective">Apply</a>
+    <a href="/ask">Ask</a>
+    <div class="nav-drop">
+      <a href="/program" class="drop-toggle">Program ▾</a>
+      <div class="drop-menu">
+        <a href="/program">Program Overview</a>
+        <a href="/schools">Where You Can Go</a>
+        <a href="/program/life">Life in the Program</a>
+        <a href="/program/career">Career Path</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/knowledge" class="drop-toggle">Knowledge ▾</a>
+      <div class="drop-menu">
+        <a href="/knowledge">Quiz</a>
+        <a href="/knowledge/fundamentals">Fundamentals</a>
+        <a href="/knowledge/ranks">Ranks</a>
+        <a href="/knowledge/customs">Customs & General Orders</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/uniforms" class="drop-toggle">Uniforms ▾</a>
+      <div class="drop-menu">
+        <a href="/uniforms">Overview & Gallery</a>
+        <a href="/insignia">Insignia by Class</a>
+        <a href="/ribbons">Ribbon Rack Builder</a>
+        <a href="/grooming">Grooming Standards</a>
+      </div>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="radar" aria-hidden="true"><div class="sweep"></div><div class="blip b1"></div><div class="blip b2"></div><div class="blip b3"></div></div><div class="wrap">
+  <div class="stamp">FOR MIDSHIPMEN<br>USE ONLY</div>
+  <h1><span class="amber">Terms of use</span></h1>
+  <p class="sub">The fine print, kept short.</p>
+</div></header>
+
+<section class="section"><div class="wrap prose">
+  <h3 class="reveal">Educational purpose</h3>
+  <p class="reveal">NROTC Guide is an independent educational resource for current and prospective NROTC midshipmen. It is not affiliated with, endorsed by, or sponsored by the Department of War, the Department of the Navy, the U.S. Marine Corps, Naval Service Training Command, or any U.S. government agency.</p>
+
+  <h3 class="reveal">Sources and accuracy</h3>
+  <p class="reveal">Site content is sourced from NSTC M-1533.2F, Regulations for Officer Development (February 2025), and other official documents cited throughout the site. Regulations and policies change. Verify anything you intend to act on with your unit and current official sources.</p>
+
+  <h3 class="reveal">No warranties</h3>
+  <p class="reveal">This site is provided as-is, with no warranties of any kind. We do not guarantee that content is complete, current, or error-free, and we are not liable for decisions made based on it. Nothing here is legal, medical, or career advice.</p>
+
+  <h3 class="reveal">Donations</h3>
+  <p class="reveal">Voluntary contributions through Buy Me a Coffee are personal gifts, not tax-deductible, and do not buy influence over site content.</p>
+
+  <h3 class="reveal">Intellectual property</h3>
+  <p class="reveal">Site design, text, and illustrations are © 2026 NROTC Guide. The government regulations summarized here are public documents and remain in the public domain.</p>
+
+  <h3 class="reveal">Acceptable use</h3>
+  <p class="reveal">Do not misuse the site, attempt to disrupt it, or scrape it aggressively enough to degrade service for others.</p>
+
+  <p class="source reveal">Last updated: 10 October 2026.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="disclaimer"><strong>NOT AFFILIATED.</strong> NROTC Guide is an independent educational resource. It is not affiliated with, endorsed by, or sponsored by the Department of War, the Department of the Navy, the U.S. Marine Corps, Naval Service Training Command, or any U.S. government agency.</div>
+  <div class="fine"><span>© 2026 NROTC GUIDE — FOR MIDSHIPMEN, BY MIDSHIPMEN</span><span><a href="https://buymeacoffee.com/nrotcguide" target="_blank" rel="noopener">☕ BUY ME A COFFEE</a></span><span><a href="/privacy">PRIVACY</a> · <a href="/terms">TERMS</a></span><span>SRC: ROD NSTC M-1533.2F (FEB 2025)</span></div>
+</div></footer>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* scroll progress */
+(function () {
+  const bar = document.getElementById('progress');
+  addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, { passive: true });
+})();
+</script>
+<script>
+/* touch nav: tap toggles dropdowns instead of following the toggle link */
+(function () {
+  if (!matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.nav-drop').forEach(d => {
+    d.querySelector('.drop-toggle').addEventListener('click', e => {
+      e.preventDefault();
+      const was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+      if (!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+  });
+})();
+</script>
+<!-- Navy 251st birthday banner: shows 13 Oct only -->
+<div id="navy-bday-banner" hidden style="
+  position:sticky;top:0;z-index:999;text-align:center;
+  background:#0a1628;color:#e8d9a8;font-size:.9rem;letter-spacing:.04em;
+  padding:.55rem 1rem;border-bottom:2px solid #c9a227;">
+  ⚓ U.S. Navy birthday — 251 years. 13 October 1775.
+  <button id="navy-bday-x" aria-label="Dismiss" style="
+    margin-left:.75rem;background:none;border:1px solid #c9a227;color:#e8d9a8;
+    border-radius:4px;cursor:pointer;padding:0 .4rem;">×</button>
+</div>
+<script>
+(function(){
+  var d = new Date();
+  if (d.getMonth() !== 9 || d.getDate() !== 13) return; /* Oct 13 only */
+  var b = document.getElementById('navy-bday-banner');
+  b.hidden = false;
+  document.getElementById('navy-bday-x').onclick = function(){ b.remove(); };
+})();
+</script>
+</body>
+</html>

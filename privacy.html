@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy — NROTC Guide</title>
+<link rel="icon" type="image/png" href="/img/icon.png">
+<meta name="description" content="NROTC Guide privacy policy: what the Ask form collects and how external links are handled.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">NROTC GUIDE <span class="tag">UNOFFICIAL</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/prospective">Apply</a>
+    <a href="/ask">Ask</a>
+    <div class="nav-drop">
+      <a href="/program" class="drop-toggle">Program ▾</a>
+      <div class="drop-menu">
+        <a href="/program">Program Overview</a>
+        <a href="/schools">Where You Can Go</a>
+        <a href="/program/life">Life in the Program</a>
+        <a href="/program/career">Career Path</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/knowledge" class="drop-toggle">Knowledge ▾</a>
+      <div class="drop-menu">
+        <a href="/knowledge">Quiz</a>
+        <a href="/knowledge/fundamentals">Fundamentals</a>
+        <a href="/knowledge/ranks">Ranks</a>
+        <a href="/knowledge/customs">Customs & General Orders</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/uniforms" class="drop-toggle">Uniforms ▾</a>
+      <div class="drop-menu">
+        <a href="/uniforms">Overview & Gallery</a>
+        <a href="/insignia">Insignia by Class</a>
+        <a href="/ribbons">Ribbon Rack Builder</a>
+        <a href="/grooming">Grooming Standards</a>
+      </div>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="radar" aria-hidden="true"><div class="sweep"></div><div class="blip b1"></div><div class="blip b2"></div><div class="blip b3"></div></div><div class="wrap">
+  <div class="stamp">FOR MIDSHIPMEN<br>USE ONLY</div>
+  <h1><span class="amber">Privacy</span></h1>
+  <p class="sub">What this site collects — and what it doesn't.</p>
+</div></header>
+
+<section class="section"><div class="wrap prose">
+  <h3 class="reveal">No data collection</h3>
+  <p class="reveal">Browsing this site collects nothing: no accounts, no sign-ins, no cookies, no analytics, and no tracking. Nothing you read, click, or search on this site is recorded by us.</p>
+
+  <h3 class="reveal">Ask a Midshipman</h3>
+  <p class="reveal">If you submit a question through the Ask form, your question, your email address, and any preferences you select about who should answer (gender, branch, unit, class year) are sent through Formspree, the form service this site uses, which delivers them to our team by email. Your email is used only to send you the answer. It is never published or shared. Formspree handles submissions under its own privacy policy.</p>
+
+  <h3 class="reveal">External links</h3>
+  <p class="reveal">This site links to outside pages: official government documents, NROTC unit websites, and Buy Me a Coffee. Those sites operate under their own privacy policies, which we do not control.</p>
+
+  <h3 class="reveal">Donations</h3>
+  <p class="reveal">Voluntary contributions through Buy Me a Coffee are processed entirely by Buy Me a Coffee under its own terms and privacy policy. We receive no payment details from those transactions.</p>
+
+  <h3 class="reveal">Changes</h3>
+  <p class="reveal">If this policy ever changes, the updated version will be posted here with a new date.</p>
+
+  <p class="source reveal">Last updated: 12 October 2026.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="disclaimer"><strong>NOT AFFILIATED.</strong> NROTC Guide is an independent educational resource. It is not affiliated with, endorsed by, or sponsored by the Department of War, the Department of the Navy, the U.S. Marine Corps, Naval Service Training Command, or any U.S. government agency.</div>
+  <div class="fine"><span>© 2026 NROTC GUIDE — FOR MIDSHIPMEN, BY MIDSHIPMEN</span><span><a href="https://buymeacoffee.com/nrotcguide" target="_blank" rel="noopener">☕ BUY ME A COFFEE</a></span><span><a href="/privacy">PRIVACY</a> · <a href="/terms">TERMS</a></span><span>SRC: ROD NSTC M-1533.2F (FEB 2025)</span></div>
+</div></footer>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* scroll progress */
+(function () {
+  const bar = document.getElementById('progress');
+  addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, { passive: true });
+})();
+</script>
+<script>
+/* touch nav: tap toggles dropdowns instead of following the toggle link */
+(function () {
+  if (!matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.nav-drop').forEach(d => {
+    d.querySelector('.drop-toggle').addEventListener('click', e => {
+      e.preventDefault();
+      const was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+      if (!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+  });
+})();
+</script>
+<!-- Navy 251st birthday banner: shows 13 Oct only -->
+<div id="navy-bday-banner" hidden style="
+  position:sticky;top:0;z-index:999;text-align:center;
+  background:#0a1628;color:#e8d9a8;font-size:.9rem;letter-spacing:.04em;
+  padding:.55rem 1rem;border-bottom:2px solid #c9a227;">
+  ⚓ U.S. Navy birthday — 251 years. 13 October 1775.
+  <button id="navy-bday-x" aria-label="Dismiss" style="
+    margin-left:.75rem;background:none;border:1px solid #c9a227;color:#e8d9a8;
+    border-radius:4px;cursor:pointer;padding:0 .4rem;">×</button>
+</div>
+<script>
+(function(){
+  var d = new Date();
+  if (d.getMonth() !== 9 || d.getDate() !== 13) return; /* Oct 13 only */
+  var b = document.getElementById('navy-bday-banner');
+  b.hidden = false;
+  document.getElementById('navy-bday-x').onclick = function(){ b.remove(); };
+})();
+</script>
+</body>
+</html>

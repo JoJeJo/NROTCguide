@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naval Knowledge — NROTC Guide</title>
+<link rel="icon" type="image/png" href="/img/icon.png">
+<meta name="description" content="The knowledge every midshipman should master: mission, honor code, core values, chain of command, ranks, and customs. Sourced from the ROD.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">NROTC GUIDE <span class="tag">UNOFFICIAL</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/prospective">Apply</a>
+    <a href="/ask">Ask</a>
+    <div class="nav-drop">
+      <a href="/program" class="drop-toggle">Program ▾</a>
+      <div class="drop-menu">
+        <a href="/program">Program Overview</a>
+        <a href="/schools">Where You Can Go</a>
+        <a href="/program/life">Life in the Program</a>
+        <a href="/program/career">Career Path</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/knowledge" class="drop-toggle on">Knowledge ▾</a>
+      <div class="drop-menu">
+        <a href="/knowledge">Quiz</a>
+        <a href="/knowledge/fundamentals">Fundamentals</a>
+        <a href="/knowledge/ranks">Ranks</a>
+        <a href="/knowledge/customs">Customs & General Orders</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/uniforms" class="drop-toggle">Uniforms ▾</a>
+      <div class="drop-menu">
+        <a href="/uniforms">Overview & Gallery</a>
+        <a href="/insignia">Insignia by Class</a>
+        <a href="/ribbons">Ribbon Rack Builder</a>
+        <a href="/grooming">Grooming Standards</a>
+      </div>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="radar" aria-hidden="true"><div class="sweep"></div><div class="blip b1"></div><div class="blip b2"></div><div class="blip b3"></div></div><div class="wrap">
+  <div class="stamp">FOR MIDSHIPMEN<br>USE ONLY</div>
+  <h1><span class="amber">Fundamentals</span></h1>
+  <p class="sub">Mission, Honor Code, and Core Values.</p>
+</div></header>
+<nav class="tool-tabs" aria-label="More tools in this section"><div class="wrap"><a href="/knowledge">Quiz</a><a href="/knowledge/fundamentals" class="on" aria-current="page">Fundamentals</a><a href="/knowledge/ranks">Ranks</a><a href="/knowledge/customs">Customs</a></div></nav>
+
+
+<section class="section"><div class="wrap prose">
+  <h2 class="reveal">Mission, Honor Code & Core Values</h2>
+
+  <h3 class="reveal">Mission</h3>
+  <p class="reveal">To <strong>develop future officers mentally, morally, and physically</strong>, and to instill in them the highest ideals of duty and loyalty — in order to commission college graduates as naval officers who possess a basic professional background, are motivated toward careers in naval service, and have the potential to assume the highest responsibilities of command, citizenship, and government.</p>
+  <p class="source reveal">Source: ROD § 1-4</p>
+
+  <h3 class="reveal">Honor Code</h3>
+  <div class="field-note reveal"><strong>"A future officer does not lie, cheat, or steal."</strong><br>The ROD states it plainly: military systems operating under extreme duress are built on absolute trust. NROTC exists to instill honor during accession training so it carries into fleet service.</div>
+  <p class="source reveal">Source: ROD § 1-4</p>
+
+  <h3 class="reveal">Core Values — Honor, Courage, Commitment</h3>
+  <ul class="reveal">
+    <li><strong>Honor:</strong> a keen sense of ethical conduct — honesty, integrity, and responsibility in everything you do.</li>
+    <li><strong>Courage:</strong> the mental and moral strength to do what's right, even when it's hard or unpopular.</li>
+    <li><strong>Commitment:</strong> dedication to the mission, your people, and constant improvement of yourself and your unit.</li>
+  </ul>
+  <p class="source reveal">Source: ROD § 1-4</p>
+
+</div></section>
+<footer><div class="wrap">
+  <div class="disclaimer"><strong>NOT AFFILIATED.</strong> NROTC Guide is an independent educational resource. It is not affiliated with, endorsed by, or sponsored by the Department of War, the Department of the Navy, the U.S. Marine Corps, Naval Service Training Command, or any U.S. government agency.</div>
+  <div class="fine"><span>© 2026 NROTC GUIDE — FOR MIDSHIPMEN, BY MIDSHIPMEN</span><span><a href="https://buymeacoffee.com/nrotcguide" target="_blank" rel="noopener">☕ BUY ME A COFFEE</a></span><span><a href="/privacy">PRIVACY</a> · <a href="/terms">TERMS</a></span><span>SRC: ROD NSTC M-1533.2F (FEB 2025)</span></div>
+</div></footer>
+
+<script>
+/* smooth scroll to quiz when arriving via #rankQuiz */
+if (location.hash === '#rankQuiz') {
+  addEventListener('load', () => setTimeout(() => {
+    const q = document.getElementById('rankQuiz');
+    if (q) q.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 350));
+}
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* randomized quiz — 5 questions from the bank */
+(function () {
+  const QBANK = [
+/* Ranks — Navy and Marine Corps officer and enlisted rank structure */
+{q:"O-1 in the Navy is a…",o:["Ensign","Lieutenant Junior Grade","Lieutenant","Commander"],a:0,s:"Navy officer rank structure"},
+{q:"O-2 in the Navy is a…",o:["Lieutenant Junior Grade","Ensign","Lieutenant","Captain"],a:0,s:"Navy officer rank structure"},
+{q:"O-3 in the Navy is a…",o:["Lieutenant","Lieutenant Commander","Captain","Major"],a:0,s:"Navy officer rank structure"},
+{q:"O-4 in the Navy is a…",o:["Lieutenant Commander","Commander","Lieutenant","Colonel"],a:0,s:"Navy officer rank structure"},
+{q:"O-5 in the Navy is a…",o:["Commander","Captain","Lieutenant Commander","Rear Admiral"],a:0,s:"Navy officer rank structure"},
+{q:"O-6 in the Navy is a…",o:["Captain","Commander","Colonel","Commodore"],a:0,s:"Navy officer rank structure"},
+{q:"O-7 in the Navy is a…",o:["Rear Admiral (lower half)","Rear Admiral (upper half)","Vice Admiral","Brigadier General"],a:0,s:"Navy officer rank structure"},
+{q:"O-8 in the Navy is a…",o:["Rear Admiral (upper half)","Vice Admiral","Admiral","Major General"],a:0,s:"Navy officer rank structure"},
+{q:"O-9 in the Navy is a…",o:["Vice Admiral","Admiral","Rear Admiral (upper half)","Lieutenant General"],a:0,s:"Navy officer rank structure"},
+{q:"O-10 in the Navy is an…",o:["Admiral","Vice Admiral","General","Fleet Admiral"],a:0,s:"Navy officer rank structure"},
+{q:"O-1 in the Marine Corps is a…",o:["Second Lieutenant","First Lieutenant","Ensign","Corporal"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-2 in the Marine Corps is a…",o:["First Lieutenant","Second Lieutenant","Captain","Lieutenant Junior Grade"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-3 in the Marine Corps is a…",o:["Captain","Major","Lieutenant","Commander"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-4 in the Marine Corps is a…",o:["Major","Captain","Lieutenant Colonel","Commander"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-5 in the Marine Corps is a…",o:["Lieutenant Colonel","Colonel","Major","Commander"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-6 in the Marine Corps is a…",o:["Colonel","Captain","Brigadier General","Lieutenant Colonel"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-7 in the Marine Corps is a…",o:["Brigadier General","Major General","Rear Admiral (lower half)","Colonel"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-8 in the Marine Corps is a…",o:["Major General","Lieutenant General","Brigadier General","Rear Admiral (upper half)"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-9 in the Marine Corps is a…",o:["Lieutenant General","General","Major General","Vice Admiral"],a:0,s:"Marine Corps officer rank structure"},
+{q:"O-10 in the Marine Corps is a…",o:["General","Admiral","Lieutenant General","Sergeant Major"],a:0,s:"Marine Corps officer rank structure"},
+{q:"E-1 in the Navy is a…",o:["Seaman Recruit","Seaman Apprentice","Private","Airman Recruit"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-3 in the Navy is a…",o:["Seaman","Seaman Apprentice","Petty Officer Third Class","Lance Corporal"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-4 in the Navy is a…",o:["Petty Officer Third Class","Petty Officer Second Class","Corporal","Sergeant"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-5 in the Navy is a…",o:["Petty Officer Second Class","Petty Officer First Class","Petty Officer Third Class","Staff Sergeant"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-6 in the Navy is a…",o:["Petty Officer First Class","Chief Petty Officer","Petty Officer Second Class","Gunnery Sergeant"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-7 in the Navy is a…",o:["Chief Petty Officer","Senior Chief Petty Officer","Master Sergeant","First Sergeant"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-8 in the Navy is a…",o:["Senior Chief Petty Officer","Master Chief Petty Officer","Chief Petty Officer","Master Sergeant"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-9 in the Navy is a…",o:["Master Chief Petty Officer","Senior Chief Petty Officer","Sergeant Major","Master Gunnery Sergeant"],a:0,s:"Navy enlisted rank structure"},
+{q:"E-1 in the Marine Corps is a…",o:["Private","Private First Class","Seaman Recruit","Specialist"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"E-2 in the Marine Corps is a…",o:["Private First Class","Lance Corporal","Private","Seaman Apprentice"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"E-3 in the Marine Corps is a…",o:["Lance Corporal","Corporal","Private First Class","Seaman"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"E-4 in the Marine Corps is a…",o:["Corporal","Sergeant","Lance Corporal","Petty Officer Third Class"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"E-5 in the Marine Corps is a…",o:["Sergeant","Staff Sergeant","Corporal","Petty Officer Second Class"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"E-6 in the Marine Corps is a…",o:["Staff Sergeant","Gunnery Sergeant","Sergeant","Petty Officer First Class"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"E-7 in the Marine Corps is a…",o:["Gunnery Sergeant","Master Sergeant","Staff Sergeant","Chief Petty Officer"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"Which two ranks share the E-8 pay grade in the Marine Corps?",o:["Master Sergeant and First Sergeant","Sergeant and Staff Sergeant","Master Sergeant and Sergeant Major","First Sergeant and Gunnery Sergeant"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"Which two ranks share the E-9 pay grade in the Marine Corps?",o:["Master Gunnery Sergeant and Sergeant Major","Sergeant Major and First Sergeant","Master Gunnery Sergeant and Master Sergeant","Sergeant Major and Master Sergeant"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"A Navy Captain's paygrade is…",o:["O-6","O-5","O-4","O-7"],a:0,s:"Navy officer rank structure"},
+{q:"A Marine Corps Colonel's paygrade is…",o:["O-6","O-5","O-7","O-4"],a:0,s:"Marine Corps officer rank structure"},
+{q:"A Chief Petty Officer's paygrade is…",o:["E-7","E-6","E-8","E-9"],a:0,s:"Navy enlisted rank structure"},
+{q:"A Gunnery Sergeant's paygrade is…",o:["E-7","E-6","E-8","E-5"],a:0,s:"Marine Corps enlisted rank structure"},
+{q:"An Ensign's paygrade is…",o:["O-1","O-2","O-3","E-1"],a:0,s:"Navy officer rank structure"},
+{q:"In the Navy, which is senior: Commander or Captain?",o:["Captain","Commander","They are equal","Depends on the billet"],a:0,s:"Navy officer rank structure (O-6 > O-5)"},
+{q:"How many stars does a Vice Admiral wear?",o:["3","2","4","1"],a:0,s:"Navy flag officer insignia (O-9 = 3 stars)"},
+{q:"How many stars does a Rear Admiral (lower half) wear?",o:["1","2","3","0"],a:0,s:"Navy flag officer insignia (O-7 = 1 star)"},
+{q:"The abbreviation for Lieutenant Commander is…",o:["LCDR","LT","CDR","LTC"],a:0,s:"Navy officer abbreviations"},
+{q:"The abbreviation for Ensign is…",o:["ENS","EN","LTJG","ESN"],a:0,s:"Navy officer abbreviations"},
+{q:"The abbreviation for Master Chief Petty Officer is…",o:["MCPO","CPO","SCPO","MPCO"],a:0,s:"Navy enlisted abbreviations"},
+/* General Orders of a Sentry — fill in the blank, wording as listed on the Customs page (U.S. Navy General Orders of a Sentry) */
+{q:"General Order #1: To take charge of this post and all ______ property in view.",o:["government","military","federal","naval"],a:0,s:"General Orders of a Sentry — #1"},
+{q:"General Order #1: To take ______ of this post and all government property in view.",o:["charge","command","control","possession"],a:0,s:"General Orders of a Sentry — #1"},
+{q:"General Order #2: To walk my post in a ______ manner, keeping always on the alert.",o:["military","proper","brisk","formal"],a:0,s:"General Orders of a Sentry — #2"},
+{q:"General Order #2: To walk my post in a military manner, keeping always on the alert and observing everything that takes place within ______ or hearing.",o:["sight","view","reach","earshot"],a:0,s:"General Orders of a Sentry — #2"},
+{q:"General Order #3: To report all ______ of orders I am instructed to enforce.",o:["violations","infractions","deviations","occurrences"],a:0,s:"General Orders of a Sentry — #3"},
+{q:"General Order #3: To report all violations of orders I am instructed to ______.",o:["enforce","follow","obey","issue"],a:0,s:"General Orders of a Sentry — #3"},
+{q:"General Order #4: To ______ all calls from posts more distant from the guardhouse than my own.",o:["repeat","relay","answer","pass"],a:0,s:"General Orders of a Sentry — #4"},
+{q:"General Order #4: To repeat all calls from posts more distant from the ______ than my own.",o:["guardhouse","barracks","quarterdeck","office of the day"],a:0,s:"General Orders of a Sentry — #4"},
+{q:"General Order #5: To ______ my post only when properly relieved.",o:["quit","leave","abandon","vacate"],a:0,s:"General Orders of a Sentry — #5"},
+{q:"General Order #5: To quit my post only when properly ______.",o:["relieved","replaced","dismissed","ordered"],a:0,s:"General Orders of a Sentry — #5"},
+{q:"General Order #6: To receive, obey, and pass on to the ______ who relieves me all orders from the commanding officer, field officer of the day, officer of the day, and officers and petty officers of the watch.",o:["sentry","relief","petty officer","corporal"],a:0,s:"General Orders of a Sentry — #6"},
+{q:"General Order #6: To receive, ______, and pass on to the sentry who relieves me all orders from the commanding officer, field officer of the day, officer of the day, and officers and petty officers of the watch.",o:["obey","follow","repeat","execute"],a:0,s:"General Orders of a Sentry — #6"},
+{q:"General Order #7: To talk to ______ except in the line of duty.",o:["no one","anyone","visitors","civilians"],a:0,s:"General Orders of a Sentry — #7"},
+{q:"General Order #7: To talk to no one except in the line of ______.",o:["duty","work","service","orders"],a:0,s:"General Orders of a Sentry — #7"},
+{q:"General Order #8: To give the ______ in case of fire or disorder.",o:["alarm","signal","warning","alert"],a:0,s:"General Orders of a Sentry — #8"},
+{q:"General Order #8: To give the alarm in case of fire or ______.",o:["disorder","attack","emergency","drill"],a:0,s:"General Orders of a Sentry — #8"},
+{q:"General Order #9: To call the ______ of the watch in any case not covered by instructions.",o:["petty officer","corporal","officer","sergeant"],a:0,s:"General Orders of a Sentry — #9"},
+{q:"General Order #9: To call the petty officer of the watch in any case not covered by ______.",o:["instructions","orders","my post","the plan"],a:0,s:"General Orders of a Sentry — #9"},
+{q:"General Order #10: To salute all officers and all colors and standards not ______.",o:["cased","flying","raised","furled"],a:0,s:"General Orders of a Sentry — #10"},
+{q:"General Order #10: To salute all ______ and all colors and standards not cased.",o:["officers","seniors","colors","officials"],a:0,s:"General Orders of a Sentry — #10"},
+{q:"General Order #11: To be especially ______ at night and during the time for challenging, to challenge all persons on or near my post.",o:["watchful","alert","careful","vigilant"],a:0,s:"General Orders of a Sentry — #11"},
+{q:"General Order #11: To be especially watchful at night and during the time for challenging, to challenge all persons on or near my post, and to allow no one to pass without proper ______.",o:["authority","orders","permission","identification"],a:0,s:"General Orders of a Sentry — #11"},
+  ];
+  /* shuffle helper */
+  function shuffle(arr) {
+    for (let k = arr.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [arr[k], arr[j]] = [arr[j], arr[k]];
+    }
+    return arr;
+  }
+  /* build a fresh 5-question quiz: random questions, shuffled options */
+  function buildQuiz() {
+    return shuffle(QBANK.slice()).slice(0, 5).map(q => {
+      const order = shuffle(q.o.map((_, k) => k));
+      return { q: q.q, opts: order.map(k => q.o[k]), a: order.indexOf(q.a), s: q.s };
+    });
+  }
+  let qs = buildQuiz(), i = 0, score = 0, done = false;
+  const qEl = document.getElementById('quizQ'), oEl = document.getElementById('quizOpts'),
+        fEl = document.getElementById('quizFb'), nEl = document.getElementById('quizNext');
+  function render() {
+    if (i >= qs.length) {
+      qEl.textContent = "Score: " + score + " / " + qs.length;
+      oEl.innerHTML = "";
+      fEl.innerHTML = score === qs.length
+        ? '<span class="ok">Perfect score — 5 for 5.</span>'
+        : score >= 4 ? '<span class="ok">Solid. One more rep.</span>'
+        : score >= 3 ? '<span class="ok">Getting there — review and retry.</span>'
+        : '<span class="no">Reread the sections above, then run it back.</span>';
+      nEl.style.display = "";
+      document.getElementById('quizNextBtn').textContent = "↻ New quiz";
+      done = true;
+      return;
+    }
+    const q = qs[i];
+    qEl.textContent = (i + 1) + " / " + qs.length + " — " + q.q;
+    fEl.innerHTML = ""; nEl.style.display = "none";
+    oEl.innerHTML = q.opts.map((o, k) => '<button class="quiz-opt">' + o + "</button>").join("");
+    oEl.querySelectorAll('.quiz-opt').forEach((b, k) => b.onclick = () => {
+      oEl.querySelectorAll('.quiz-opt').forEach(x => x.disabled = true);
+      if (k === q.a) { b.classList.add('right'); score++; fEl.innerHTML = '<span class="ok">Correct.</span> <span class="qsrc">Source: ' + q.s + '</span>'; }
+      else { b.classList.add('wrong'); oEl.children[q.a].classList.add('right'); fEl.innerHTML = '<span class="no">Not quite.</span> <span class="qsrc">Source: ' + q.s + '</span>'; }
+      nEl.style.display = "";
+    });
+  }
+  document.getElementById('quizNextBtn').onclick = () => {
+    if (done) { qs = buildQuiz(); i = 0; score = 0; done = false; document.getElementById('quizNextBtn').textContent = "Next →"; }
+    else i++;
+    render();
+  };
+  render();
+})();
+/* card tilt */
+document.querySelectorAll('.card, .testi').forEach(c => {
+  c.addEventListener('mousemove', e => {
+    const r = c.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    c.style.transform = 'perspective(700px) rotateY(' + (x * 7) + 'deg) rotateX(' + (-y * 7) + 'deg) translateY(-4px)';
+  });
+  c.addEventListener('mouseleave', () => { c.style.transform = ''; });
+});
+/* scroll progress */
+(function () {
+  const bar = document.getElementById('progress');
+  if (!bar) return;
+  addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, { passive: true });
+})();
+/* ---------- easter eggs ---------- */
+(function () {
+  /* toast helper */
+  let toastEl = document.getElementById('egg-toast');
+  if (!toastEl) { toastEl = document.createElement('div'); toastEl.id = 'egg-toast'; document.body.appendChild(toastEl); }
+  let toastT = null;
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('on');
+    clearTimeout(toastT);
+    toastT = setTimeout(() => toastEl.classList.remove('on'), 2600);
+  }
+  /* 1 — konami code: GENERAL QUARTERS */
+  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let ki = 0;
+  let gq = document.getElementById('gq');
+  if (!gq) {
+    gq = document.createElement('div'); gq.id = 'gq';
+    gq.innerHTML = '<div class="msg"><div class="big">GENERAL QUARTERS</div><div class="sub2">this is not a drill... just kidding. bravo zulu, you found it.<br>(click anywhere to stand down)</div></div>';
+    document.body.appendChild(gq);
+    gq.addEventListener('click', () => gq.classList.remove('on'));
+  }
+  /* 2 — type "hooyah": anchor rain */
+  let typed = '';
+  document.addEventListener('keydown', e => {
+    const k = e.key.toLowerCase();
+    /* konami */
+    ki = (k === seq[ki] || (seq[ki].length === 1 && k === seq[ki])) ? ki + 1 : (k === seq[0].toLowerCase() ? 1 : 0);
+    if (ki === seq.length) { ki = 0; gq.classList.add('on'); setTimeout(() => gq.classList.remove('on'), 6000); }
+    /* hooyah */
+    if (k.length === 1 && /[a-z]/.test(k)) {
+      typed = (typed + k).slice(-6);
+      if (typed === 'hooyah') {
+        typed = '';
+        for (let i = 0; i < 24; i++) {
+          const a = document.createElement('div');
+          a.className = 'egg-anchor'; a.textContent = '⚓';
+          a.style.left = Math.random() * 100 + 'vw';
+          a.style.animationDuration = (1.8 + Math.random() * 1.6) + 's';
+          a.style.animationDelay = (Math.random() * .6) + 's';
+          document.body.appendChild(a);
+          setTimeout(() => a.remove(), 4200);
+        }
+        toast('HOOYAH.');
+      }
+    }
+  });
+  /* 3 — stamp: click 5 times */
+  let stamps = 0, stampT = null;
+  document.querySelectorAll('.stamp').forEach(s => s.addEventListener('click', () => {
+    stamps++;
+    clearTimeout(stampT); stampT = setTimeout(() => stamps = 0, 2500);
+    if (stamps === 5) {
+      stamps = 0;
+      s.classList.remove('egg-spin'); void s.offsetWidth; s.classList.add('egg-spin');
+      toast('It\'s just a stamp. But nice persistence, shipmate.');
+    } else if (stamps === 3) {
+      toast('Keep going...');
+    }
+  }));
+  /* 4 — footer source hover */
+  document.querySelectorAll('footer .fine span').forEach(sp => {
+    if (/SRC/i.test(sp.textContent)) sp.addEventListener('mouseenter', () => toast('You actually read the footer. Respect.'), { once: true });
+  });
+  /* 5 — console */
+  console.log('%c⚓ BRAVO ZULU %c— you checked the console. The ROD is 600 pages; this site is the shortcut. Created for midshipmen, by midshipmen.',
+    'font-size:20px', 'font-size:12px;color:#888');
+})();
+
+</script>
+<script>
+/* touch nav: tap toggles dropdowns instead of following the toggle link */
+(function () {
+  if (!matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.nav-drop').forEach(d => {
+    d.querySelector('.drop-toggle').addEventListener('click', e => {
+      e.preventDefault();
+      const was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+      if (!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+  });
+})();
+</script>
+<!-- Navy 251st birthday banner: shows 13 Oct only -->
+<div id="navy-bday-banner" hidden style="
+  position:sticky;top:0;z-index:999;text-align:center;
+  background:#0a1628;color:#e8d9a8;font-size:.9rem;letter-spacing:.04em;
+  padding:.55rem 1rem;border-bottom:2px solid #c9a227;">
+  ⚓ U.S. Navy birthday — 251 years. 13 October 1775.
+  <button id="navy-bday-x" aria-label="Dismiss" style="
+    margin-left:.75rem;background:none;border:1px solid #c9a227;color:#e8d9a8;
+    border-radius:4px;cursor:pointer;padding:0 .4rem;">×</button>
+</div>
+<script>
+(function(){
+  var d = new Date();
+  if (d.getMonth() !== 9 || d.getDate() !== 13) return; /* Oct 13 only */
+  var b = document.getElementById('navy-bday-banner');
+  b.hidden = false;
+  document.getElementById('navy-bday-x').onclick = function(){ b.remove(); };
+})();
+</script>
+</body>
+</html>

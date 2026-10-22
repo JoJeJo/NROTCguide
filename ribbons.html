@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ribbon Rack Builder — NROTC Guide</title>
+<link rel="icon" type="image/png" href="/img/icon.png">
+<meta name="description" content="NROTC uniform guide: what midshipmen are issued, midshipman insignia, ribbons, and grooming standards. Sourced from the ROD.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">NROTC GUIDE <span class="tag">UNOFFICIAL</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/prospective">Apply</a>
+    <a href="/ask">Ask</a>
+    <div class="nav-drop">
+      <a href="/program" class="drop-toggle">Program ▾</a>
+      <div class="drop-menu">
+        <a href="/program">Program Overview</a>
+        <a href="/schools">Where You Can Go</a>
+        <a href="/program/life">Life in the Program</a>
+        <a href="/program/career">Career Path</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/knowledge" class="drop-toggle">Knowledge ▾</a>
+      <div class="drop-menu">
+        <a href="/knowledge">Quiz</a>
+        <a href="/knowledge/fundamentals">Fundamentals</a>
+        <a href="/knowledge/ranks">Ranks</a>
+        <a href="/knowledge/customs">Customs & General Orders</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/uniforms" class="drop-toggle on">Uniforms ▾</a>
+      <div class="drop-menu">
+        <a href="/uniforms">Overview & Gallery</a>
+        <a href="/insignia">Insignia by Class</a>
+        <a href="/ribbons">Ribbon Rack Builder</a>
+        <a href="/grooming">Grooming Standards</a>
+      </div>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="radar" aria-hidden="true"><div class="sweep"></div><div class="blip b1"></div><div class="blip b2"></div><div class="blip b3"></div></div><div class="wrap">
+  <div class="stamp">FOR MIDSHIPMEN<br>USE ONLY</div>
+  <h1><span class="amber">Ribbon Rack</span></h1>
+</div>
+  <a class="scroll-hint" href="#builder" aria-label="Scroll down"><span>SCROLL</span><span class="chev"></span></a>
+</header>
+<nav class="tool-tabs" aria-label="More tools in this section"><div class="wrap"><a href="/uniforms">Gallery</a><a href="/insignia">Insignia</a><a href="/ribbons" class="on" aria-current="page">Ribbon Rack</a><a href="/grooming">Grooming</a></div></nav>
+
+
+<section class="section" id="builder"><div class="wrap prose">
+  <h3 class="reveal">Ribbon rack builder</h3>
+  <p class="reveal">Check off every ribbon you're authorized to wear. Top row, left to right, is highest to lowest.</p>
+
+  <div class="rack-builder reveal">
+    <div class="rp-grid" id="rackPicker"></div>
+    <div class="rack-out">
+      <div class="rack-head"><span class="chapter-label">// YOUR RACK</span><span id="rackCount"></span></div>
+      <div id="rackDisplay"></div>
+      <p class="source" style="margin-top:16px">Precedence: ROD Table 18 (M-1533.2F). Award criteria: Notre Dame NROTC ribbon criteria. Attachments: gold star for 2nd and subsequent awards; silver star in lieu of five gold (ROD Table 19). NROTC ribbons are not worn with official Navy awards — one or the other. Not authorized during summer training.</p>
+    </div>
+  </div>
+
+</div></section>
+
+<footer><div class="wrap">
+  <div class="disclaimer"><strong>NOT AFFILIATED.</strong> NROTC Guide is an independent educational resource. It is not affiliated with, endorsed by, or sponsored by the Department of War, the Department of the Navy, the U.S. Marine Corps, Naval Service Training Command, or any U.S. government agency.</div>
+  <div class="fine"><span>© 2026 NROTC GUIDE — FOR MIDSHIPMEN, BY MIDSHIPMEN</span><span><a href="https://buymeacoffee.com/nrotcguide" target="_blank" rel="noopener">☕ BUY ME A COFFEE</a></span><span><a href="/privacy">PRIVACY</a> · <a href="/terms">TERMS</a></span><span>SRC: ROD NSTC M-1533.2F (FEB 2025)</span></div>
+</div></footer>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* Ribbon Rack Builder — NROTC standardized ribbons.
+   Designs traced from NROTC reference images (Notre Dame NROTC ribbon chart).
+   Precedence and criteria per ROD Table 18 (NSTC M-1533.2F). */
+(function () {
+  const NAVY = "#1a2f6b", GOLD = "#ffc400", RED = "#e8231a", GREEN = "#1fb832",
+        ORANGE = "#ff6a00", WHITE = "#ffffff", LTBLUE = "#4aa8e0", OLIVE = "#a8a83c",
+        DARK = "#1a241a", BLACK = "#0a0a0c", DARKNAVY = "#0c1e4a", GRAY = "#8a8a8a";
+
+  /* stripe helper: [color, width] — widths in proportional units */
+  const RIBBONS = [
+    { id: "aap", name: "All Around Performance",
+      crit: "Early promote, 3.75+ GPA, and 95 average PRT (Navy) or 285 PFT (Marine Corps).",
+      stripes: [[NAVY, 12]] },
+    { id: "ae", name: "Academic Excellence",
+      crit: "3.75+ GPA on the 4.0 scale.",
+      stripes: [[RED, 4], [WHITE, 3], [RED, 4]] },
+    { id: "aa", name: "Academic Achievement",
+      crit: "3.50+ GPA on the 4.0 scale.",
+      stripes: [[RED, 11]] },
+    { id: "ca", name: "Commendation Award",
+      crit: "Awarded by the battalion commander in recognition of meritorious achievements.",
+      stripes: [[GREEN, 2.5], [GOLD, 6], [GREEN, 2.5]] },
+    { id: "la", name: "Leadership Award",
+      crit: "Awarded by the class advisor in recognition of meritorious achievements.",
+      stripes: [[GOLD, 2.5], [NAVY, 0.6], [GOLD, 1.5], [NAVY, 2.5], [GOLD, 1.5], [NAVY, 0.6], [GOLD, 2.5]] },
+    { id: "cs", name: "Community Service",
+      crit: "Awarded for performing 15 or more community service hours in a semester.",
+      stripes: [[ORANGE, 4.5], [WHITE, 0.5], [ORANGE, 1], [WHITE, 0.5], [ORANGE, 4.5]] },
+    { id: "pf", name: "Physical Fitness",
+      crit: "Awarded for a score of 285 on the PFT or 95+ avg on the PRT.",
+      stripes: [[NAVY, 1], [RED, 1], [WHITE, 1], [NAVY, 6], [WHITE, 1], [RED, 1], [NAVY, 1]] },
+    { id: "dt", name: "Drill Team",
+      crit: "Awarded for participating in the drill team for one semester.",
+      stripes: [[BLACK, 1.5], [GRAY, 3.5], [RED, 1], [GRAY, 3.5], [BLACK, 1.5]], tab: "DRILL TEAM", noStars: true },
+    { id: "cg", name: "Color Guard",
+      crit: "Awarded for service in the unit color guard or drum and bugle corps for one semester.",
+      stripes: [[NAVY, 2], [WHITE, 1], [GOLD, 5], [WHITE, 1], [NAVY, 2]] },
+    { id: "im", name: "Intramural",
+      crit: "Awarded for participating in any form of organized sports for one academic semester.",
+      stripes: [["#1a1a9a", 0.6], ["#1aaa1a", 0.6], ["#9a1a1a", 1.8], [WHITE, 0.5], [BLACK, 0.6], ["#ff4a1a", 3.2], ["#8a4a1a", 0.5], ["#e8c898", 1.0], ["#8a4a1a", 0.5], ["#f0f01a", 3.2], [BLACK, 0.6], [WHITE, 0.5], ["#9a1a1a", 1.8], ["#9a9a9a", 0.8]] },
+    { id: "rp", name: "Rifle / Pistol Team",
+      crit: "Awarded to any member of the Rifle/Pistol Team for one academic semester.",
+      stripes: [["#00ff00", 1.5], ["#eaff00", 0.8], ["#00ff00", 1], ["#eaff00", 0.8], ["#00ff00", 2.5], ["#eaff00", 3.5], ["#00ff00", 2.5], ["#eaff00", 0.8], ["#00ff00", 1], ["#eaff00", 0.8], ["#00ff00", 1.5]] },
+    { id: "sa", name: "Sailing Award",
+      crit: "Awarded to midshipmen who qualify as Skippers B, Crewmen or part of a team.",
+      stripes: [["#5a7a9a", 2.5], [WHITE, 0.7], ["#5a7a9a", 4.5], [WHITE, 0.7], ["#5a7a9a", 2.5]] },
+    { id: "rec", name: "Recruiting",
+      crit: "Awarded to midshipmen instrumental in the enrollment of new NROTC recruits.",
+      stripes: [[BLACK, 1.0], ["#f0f01a", 0.9], [RED, 1.3], [WHITE, 1.4], [NAVY, 1.8], ["#1aaa1a", 1.1], [NAVY, 1.1]] },
+    { id: "cr", name: "Cruise",
+      crit: "Awarded for exemplary performance while assigned to summer cruise.",
+      stripes: [[NAVY, 2.5], [WHITE, 0.5], [RED, 5.5], [WHITE, 0.5], [NAVY, 2.5]] },
+  ];
+
+  /* 3D faceted star like real 5/16" metal attachments */
+  function star3D(cx, cy, r, gradId, strokeCol) {
+    let facets = "";
+    const inner = r * 0.42;
+    for (let i = 0; i < 5; i++) {
+      const aOuter = -Math.PI/2 + i * 2*Math.PI/5;
+      const aIn1 = aOuter + Math.PI/5, aIn2 = aOuter - Math.PI/5;
+      const ox = cx + r*Math.cos(aOuter), oy = cy + r*Math.sin(aOuter);
+      const ix1 = cx + inner*Math.cos(aIn1), iy1 = cy + inner*Math.sin(aIn1);
+      const ix2 = cx + inner*Math.cos(aIn2), iy2 = cy + inner*Math.sin(aIn2);
+      // left facet (darker) and right facet (lighter) for 3D effect
+      facets += `<path d="M${cx.toFixed(1)},${cy.toFixed(1)} L${ix1.toFixed(1)},${iy1.toFixed(1)} L${ox.toFixed(1)},${oy.toFixed(1)} Z" fill="url(#${gradId}dk)" opacity="0.85"/>`;
+      facets += `<path d="M${cx.toFixed(1)},${cy.toFixed(1)} L${ox.toFixed(1)},${oy.toFixed(1)} L${ix2.toFixed(1)},${iy2.toFixed(1)} Z" fill="url(#${gradId}lt)"/>`;
+    }
+    // outline
+    let outline = "";
+    for (let i = 0; i < 10; i++) {
+      const ang = -Math.PI/2 + i * Math.PI/5;
+      const rad = i % 2 === 0 ? r : inner;
+      outline += (i===0?"M":"L") + (cx+rad*Math.cos(ang)).toFixed(1) + "," + (cy+rad*Math.sin(ang)).toFixed(1);
+    }
+    return facets + `<path d="${outline}Z" fill="none" stroke="${strokeCol}" stroke-width="1"/>`;
+  }
+
+  let uid = 0;
+  function ribbonSVG(r, attachStars, small) {
+    const W = small ? 105 : 140, H = small ? 30 : 40, id = "rg" + (uid++);
+    const total = r.stripes.reduce((s, c) => s + c[1], 0);
+    let x = 0, rects = "";
+    r.stripes.forEach(([color, w]) => {
+      const rw = (w / total) * W;
+      rects += `<rect x="${x.toFixed(2)}" y="0" width="${(rw + 0.4).toFixed(2)}" height="${H}" fill="${color}"/>`;
+      x += rw;
+    });
+
+    /* subtle fabric weave */
+    let texture = "";
+    for (let tx = 0; tx < W; tx += 4) {
+      texture += `<line x1="${tx}" y1="0" x2="${tx}" y2="${H}" stroke="#000" stroke-width="0.4" opacity="0.04"/>`;
+    }
+    /* matte fabric: subtle edge only, no gloss */
+    const shade = `
+      <rect x="0.75" y="0.75" width="${W - 1.5}" height="${H - 1.5}" fill="none" stroke="#000" stroke-width="1" opacity="0.25"/>`;
+
+    /* 5 gold stars for All Around Performance */
+    let fixed = "";
+    if (r.stars5) {
+      for (let i = 0; i < 5; i++) {
+        const sx = W * 0.2 + i * W * 0.15;
+        fixed += `<path d="${starPath(sx, H / 2, 7)}" fill="url(#${id}g)" stroke="#6b4d08" stroke-width="0.8"/>`;
+      }
+    }
+
+    /* attachment stars: gold for 2nd+ awards, silver in lieu of 5 gold */
+    let attach = "";
+    if (attachStars > 0) {
+      const isSilver = attachStars === 5;
+      const n = isSilver ? 1 : attachStars;
+      for (let i = 0; i < n; i++) {
+        const sx = W / 2 + (i - (n - 1) / 2) * 22;
+        const gid = id + (isSilver ? "s" : "g");
+        attach += star3D(sx, H / 2, small ? 11 : 14, gid, isSilver ? "#4a4a4a" : "#5a430a");
+      }
+    }
+
+    /* drill team bronze bar - metal attachment */
+    let tab = "";
+    if (r.tab) {
+      const bw = W * 0.62, bh = H * 0.42, bx = (W - bw) / 2, by = (H - bh) / 2;
+      tab = `<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="2" fill="#2a1f14" stroke="#a07030" stroke-width="2"/>
+             <rect x="${bx + 3}" y="${by + 3}" width="${bw - 6}" height="${bh - 6}" rx="1" fill="none" stroke="#c09040" stroke-width="1" opacity="0.6"/>
+             <text x="${W / 2}" y="${H / 2 + 4}" text-anchor="middle" font-family="Arial,sans-serif" font-size="${small ? 7 : 9}" font-weight="bold" fill="#d8a050" letter-spacing="1" style="text-shadow: 0 1px 1px #000">${r.tab}</text>`;
+    }
+
+    const defs = `<defs>
+      <linearGradient id="${id}glt" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f8e080"/><stop offset="1" stop-color="#d4a017"/>
+      </linearGradient>
+      <linearGradient id="${id}gdk" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#b8860b"/><stop offset="1" stop-color="#7a5c05"/>
+      </linearGradient>
+      <linearGradient id="${id}slt" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c8c8c8"/>
+      </linearGradient>
+      <linearGradient id="${id}sdk" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#a0a0a0"/><stop offset="1" stop-color="#606060"/>
+      </linearGradient>
+    </defs>`;
+
+    return `<svg viewBox="0 0 ${W} ${H}" width="140" height="40" style="display:block">${defs}${rects}${texture}${tab}${attach}${shade}</svg>`;
+  }
+
+  const pickerEl = document.getElementById('rackPicker');
+  const rackEl = document.getElementById('rackDisplay');
+  const countEl = document.getElementById('rackCount');
+  if (!pickerEl) return;
+
+  const state = {};
+  RIBBONS.forEach(r => state[r.id] = { on: false, stars: 0 });
+
+  function renderPicker() {
+    pickerEl.innerHTML = RIBBONS.map((r, idx) => `
+      <div class="rp-item" data-id="${r.id}">
+        <div class="rp-ribbon">${ribbonSVG(r, 0)}</div>
+        <div class="rp-name">${idx + 1}. ${r.name}</div>
+        <div class="rp-crit">${r.crit}</div>
+        <div class="rp-controls">
+          <button class="rp-toggle ${state[r.id].on ? 'on' : ''}" data-act="toggle">${state[r.id].on ? '✓ Authorized' : 'Authorize'}</button>
+          <div class="rp-stars" style="display:${state[r.id].on && !r.noStars ? '' : 'none'}">
+            <span>Times awarded:</span>
+            ${[1, 2, 3, 4, 5].map(n => `<button class="rp-star ${state[r.id].stars === n ? 'on' : ''}" data-act="star" data-n="${n}" title="Awarded ${n} time${n > 1 ? 's' : ''}">${n}</button>`).join('')}
+            <button class="rp-star silver ${state[r.id].stars === 6 ? 'on' : ''}" data-act="star" data-n="6" title="6+ awards: silver star">S</button>
+          </div>
+        </div>
+      </div>`).join('');
+    pickerEl.querySelectorAll('.rp-item').forEach(item => {
+      const id = item.dataset.id;
+      item.querySelector('[data-act="toggle"]').onclick = () => {
+        state[id].on = !state[id].on;
+        if (!state[id].on) state[id].stars = 0;
+        else if (state[id].stars === 0) state[id].stars = 1;
+        renderPicker(); renderRack();
+      };
+      item.querySelectorAll('[data-act="star"]').forEach(b => b.onclick = (e) => {
+        e.stopPropagation();
+        state[id].stars = parseInt(b.dataset.n);
+        renderPicker(); renderRack();
+      });
+    });
+  }
+
+  function renderRack() {
+    const worn = RIBBONS.filter(r => state[r.id].on);
+    countEl.textContent = worn.length === 0
+      ? 'Select the ribbons you\'re authorized to wear above.'
+      : worn.length + ' ribbon' + (worn.length > 1 ? 's' : '') + ' — highest precedence top-left:';
+    if (worn.length === 0) { rackEl.innerHTML = '<div class="rack-empty">Your rack will appear here.</div>'; return; }
+    /* bottom rows filled first; top row gets remainder, centered */
+    let rows = '';
+    const perRow = 3;
+    const topCount = worn.length % perRow === 0 ? perRow : worn.length % perRow;
+    const topRow = worn.slice(0, topCount);
+    const rest = worn.slice(topCount);
+    const allRows = [topRow];
+    for (let i = 0; i < rest.length; i += perRow) {
+      allRows.push(rest.slice(i, i + perRow));
+    }
+    allRows.forEach(row => {
+      rows += '<div class="rack-row">' + row.map(r => {
+        const st = state[r.id];
+        /* stars = awards - 1: 1st award bare, 2nd = 1 gold, etc. Silver for 6+ */
+        let showStars = 0;
+        if (!r.noStars) {
+          if (st.stars >= 6) showStars = 5; // silver star
+          else if (st.stars >= 2) showStars = st.stars - 1;
+        }
+        return `<div class="rack-slot">${ribbonSVG(r, showStars, true)}</div>`;
+      }).join('') + '</div>';
+    });
+    rackEl.innerHTML = `
+      <div class="uniform-shirt">
+        <div class="shirt-fabric"></div>
+        <div class="ribbon-mount">
+          ${rows}
+          <div class="spacing-measure">
+            <div class="measure-bracket navy"><span>1/4" Navy</span></div>
+            <div class="measure-bracket marines"><span>1/8" Marines</span></div>
+          </div>
+        </div>
+        <div class="shirt-pocket-real">
+          <div class="pocket-body"></div>
+          <div class="pocket-flap-real"></div>
+          <div class="pocket-button"></div>
+        </div>
+        <div class="shirt-label">Left breast pocket — ribbons centered above, parallel to deck</div>
+      </div>`;
+  }
+
+  renderPicker();
+  renderRack();
+})();
+
+/* shoulder boards removed */
+
+</script>
+<script>
+/* touch nav: tap toggles dropdowns instead of following the toggle link */
+(function () {
+  if (!matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.nav-drop').forEach(d => {
+    d.querySelector('.drop-toggle').addEventListener('click', e => {
+      e.preventDefault();
+      const was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+      if (!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+  });
+})();
+</script>
+<script>
+document.querySelector('.scroll-hint').addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('builder').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+<!-- Navy 251st birthday banner: shows 13 Oct only -->
+<div id="navy-bday-banner" hidden style="
+  position:sticky;top:0;z-index:999;text-align:center;
+  background:#0a1628;color:#e8d9a8;font-size:.9rem;letter-spacing:.04em;
+  padding:.55rem 1rem;border-bottom:2px solid #c9a227;">
+  ⚓ U.S. Navy birthday — 251 years. 13 October 1775.
+  <button id="navy-bday-x" aria-label="Dismiss" style="
+    margin-left:.75rem;background:none;border:1px solid #c9a227;color:#e8d9a8;
+    border-radius:4px;cursor:pointer;padding:0 .4rem;">×</button>
+</div>
+<script>
+(function(){
+  var d = new Date();
+  if (d.getMonth() !== 9 || d.getDate() !== 13) return; /* Oct 13 only */
+  var b = document.getElementById('navy-bday-banner');
+  b.hidden = false;
+  document.getElementById('navy-bday-x').onclick = function(){ b.remove(); };
+})();
+</script>
+</body>
+</html>
+</script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask a Midshipman — NROTC Guide</title>
+<link rel="icon" type="image/png" href="/img/icon.png">
+<meta name="description" content="Ask a question about NROTC. A current midshipman answers.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="/">NROTC GUIDE <span class="tag">UNOFFICIAL</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/prospective">Apply</a>
+    <a href="/ask">Ask</a>
+    <div class="nav-drop">
+      <a href="/program" class="drop-toggle">Program ▾</a>
+      <div class="drop-menu">
+        <a href="/program">Program Overview</a>
+        <a href="/schools">Where You Can Go</a>
+        <a href="/program/life">Life in the Program</a>
+        <a href="/program/career">Career Path</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/knowledge" class="drop-toggle">Knowledge ▾</a>
+      <div class="drop-menu">
+        <a href="/knowledge">Quiz</a>
+        <a href="/knowledge/fundamentals">Fundamentals</a>
+        <a href="/knowledge/ranks">Ranks</a>
+        <a href="/knowledge/customs">Customs & General Orders</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="/uniforms" class="drop-toggle">Uniforms ▾</a>
+      <div class="drop-menu">
+        <a href="/uniforms">Overview & Gallery</a>
+        <a href="/insignia">Insignia by Class</a>
+        <a href="/ribbons">Ribbon Rack Builder</a>
+        <a href="/grooming">Grooming Standards</a>
+      </div>
+    </div>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="radar" aria-hidden="true"><div class="sweep"></div><div class="blip b1"></div><div class="blip b2"></div><div class="blip b3"></div></div><div class="wrap">
+  <div class="stamp">FOR MIDSHIPMEN<br>USE ONLY</div>
+  <h1><span class="amber">Ask a Midshipman</span></h1>
+  <p class="sub">Questions from future midshipmen, answered by current ones.</p>
+</div></header>
+
+<section class="section"><div class="wrap prose">
+  <form id="askForm" class="ask-form reveal" novalidate>
+    <div class="ask-field">
+      <label for="q">Your question</label>
+      <textarea id="q" name="question" maxlength="2000" required placeholder="What do you want to know about NROTC?"></textarea>
+    </div>
+    <div class="ask-field">
+      <label for="e">Your email</label>
+      <input type="email" id="e" name="email" maxlength="254" required autocomplete="email">
+      <div class="hint">Only used to send you the answer. Never published.</div>
+    </div>
+    <h3>Who should answer? <span class="opt">— optional</span></h3>
+    <div class="ask-grid">
+      <div class="ask-field">
+        <label for="g">Gender</label>
+        <select id="g" name="gender">
+          <option value="">No preference</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="ask-field">
+        <label for="b">Branch</label>
+        <select id="b" name="branch">
+          <option value="">No preference</option>
+          <option value="navy">Navy option</option>
+          <option value="marine">Marine option</option>
+        </select>
+      </div>
+      <div class="ask-field">
+        <label for="u">Unit</label>
+        <select id="u" name="unit">
+          <option value="">No preference</option>
+          <option value="Arizona State University">Arizona State University</option>
+          <option value="Auburn University">Auburn University</option>
+          <option value="Boston University">Boston University</option>
+          <option value="Carnegie Mellon University">Carnegie Mellon University</option>
+          <option value="College of the Holy Cross">College of the Holy Cross</option>
+          <option value="Cornell University">Cornell University</option>
+          <option value="Duke University">Duke University</option>
+          <option value="Embry-Riddle Aeronautical University">Embry-Riddle Aeronautical University</option>
+          <option value="Florida A&M University">Florida A&M University</option>
+          <option value="Georgia Institute of Technology">Georgia Institute of Technology</option>
+          <option value="Great Lakes Maritime Academy">Great Lakes Maritime Academy</option>
+          <option value="Iowa State University">Iowa State University</option>
+          <option value="Jacksonville University">Jacksonville University</option>
+          <option value="Maine Maritime Academy">Maine Maritime Academy</option>
+          <option value="Marquette University">Marquette University</option>
+          <option value="Massachusetts Institute of Technology">Massachusetts Institute of Technology</option>
+          <option value="Miami University">Miami University</option>
+          <option value="Morehouse College">Morehouse College</option>
+          <option value="Northwestern University">Northwestern University</option>
+          <option value="Norwich University">Norwich University</option>
+          <option value="Ohio State University">Ohio State University</option>
+          <option value="Old Dominion University">Old Dominion University</option>
+          <option value="Oregon State University">Oregon State University</option>
+          <option value="Pennsylvania State University">Pennsylvania State University</option>
+          <option value="Prairie View A&M University">Prairie View A&M University</option>
+          <option value="Purdue University">Purdue University</option>
+          <option value="Rensselaer Polytechnic Institute">Rensselaer Polytechnic Institute</option>
+          <option value="Rice University">Rice University</option>
+          <option value="Rutgers University">Rutgers University</option>
+          <option value="SUNY Maritime College">SUNY Maritime College</option>
+          <option value="Savannah State University">Savannah State University</option>
+          <option value="Southern University and A&M College">Southern University and A&M College</option>
+          <option value="Texas A&M University">Texas A&M University</option>
+          <option value="The Citadel">The Citadel</option>
+          <option value="The George Washington University">The George Washington University</option>
+          <option value="Tulane University">Tulane University</option>
+          <option value="Tuskegee University">Tuskegee University</option>
+          <option value="UC Berkeley">UC Berkeley</option>
+          <option value="University of Arizona">University of Arizona</option>
+          <option value="University of Colorado">University of Colorado</option>
+          <option value="University of Florida">University of Florida</option>
+          <option value="University of Hawaii at Manoa">University of Hawaii at Manoa</option>
+          <option value="University of Idaho">University of Idaho</option>
+          <option value="University of Illinois">University of Illinois</option>
+          <option value="University of Kansas">University of Kansas</option>
+          <option value="University of Maryland, College Park">University of Maryland, College Park</option>
+          <option value="University of Memphis">University of Memphis</option>
+          <option value="University of Michigan">University of Michigan</option>
+          <option value="University of Minnesota">University of Minnesota</option>
+          <option value="University of Mississippi">University of Mississippi</option>
+          <option value="University of Missouri">University of Missouri</option>
+          <option value="University of Nebraska">University of Nebraska</option>
+          <option value="University of New Mexico">University of New Mexico</option>
+          <option value="University of Notre Dame">University of Notre Dame</option>
+          <option value="University of Oklahoma">University of Oklahoma</option>
+          <option value="University of Pennsylvania">University of Pennsylvania</option>
+          <option value="University of Rochester">University of Rochester</option>
+          <option value="University of San Diego">University of San Diego</option>
+          <option value="University of South Carolina">University of South Carolina</option>
+          <option value="University of South Florida">University of South Florida</option>
+          <option value="University of Southern California">University of Southern California</option>
+          <option value="University of Texas">University of Texas</option>
+          <option value="University of Utah">University of Utah</option>
+          <option value="University of Virginia">University of Virginia</option>
+          <option value="University of Washington">University of Washington</option>
+          <option value="University of Wisconsin–Madison">University of Wisconsin–Madison</option>
+          <option value="Vanderbilt University">Vanderbilt University</option>
+          <option value="Villanova University">Villanova University</option>
+          <option value="Virginia Military Institute">Virginia Military Institute</option>
+          <option value="Virginia Tech">Virginia Tech</option>
+          <option value="Yale University">Yale University</option>
+        </select>
+      </div>
+      <div class="ask-field">
+        <label for="c">Class year</label>
+        <select id="c" name="class_year">
+          <option value="">No preference</option>
+          <option value="1/c">1/C</option>
+          <option value="2/c">2/C</option>
+          <option value="3/c">3/C</option>
+          <option value="4/c">4/C</option>
+        </select>
+      </div>
+    </div>
+    <input type="text" id="gotcha" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button id="askBtn" class="ask-submit" type="submit">SEND QUESTION →</button>
+    <div id="askMsg" class="ask-msg" role="status" aria-live="polite"></div>
+    <p class="hint">Our team reviews every question before passing it to a midshipman.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="disclaimer"><strong>NOT AFFILIATED.</strong> NROTC Guide is an independent educational resource. It is not affiliated with, endorsed by, or sponsored by the Department of War, the Department of the Navy, the U.S. Marine Corps, Naval Service Training Command, or any U.S. government agency.</div>
+  <div class="fine"><span>© 2026 NROTC GUIDE — FOR MIDSHIPMEN, BY MIDSHIPMEN</span><span><a href="https://buymeacoffee.com/nrotcguide" target="_blank" rel="noopener">☕ BUY ME A COFFEE</a></span><span><a href="/privacy">PRIVACY</a> · <a href="/terms">TERMS</a></span><span>SRC: ROD NSTC M-1533.2F (FEB 2025)</span></div>
+</div></footer>
+
+<script>
+document.getElementById('askForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const msg = document.getElementById('askMsg');
+  const btn = document.getElementById('askBtn');
+  const show = (ok, text) => { msg.className = 'ask-msg ' + (ok ? 'ok' : 'err'); msg.textContent = text; };
+  const q = document.getElementById('q').value.trim();
+  const em = document.getElementById('e').value.trim();
+  if (q.length < 10) { show(false, 'Please ask a real question (at least 10 characters).'); return; }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { show(false, 'Please enter a valid email address.'); return; }
+  btn.disabled = true;
+  try {
+    // FORMSPREE_FORM_ID: replace REPLACE_ME with the form ID after Jerom creates the Formspree form.
+    const fd = new FormData();
+    fd.append('question', q);
+    fd.append('email', em);
+    fd.append('gender', document.getElementById('g').value);
+    fd.append('branch', document.getElementById('b').value);
+    fd.append('unit', document.getElementById('u').value);
+    fd.append('class_year', document.getElementById('c').value);
+    fd.append('_gotcha', document.getElementById('gotcha').value);
+    fd.append('_subject', 'New Ask a Midshipman question');
+    const r = await fetch('https://formspree.io/f/REPLACE_ME', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: fd
+    });
+    if (r.ok) {
+      show(true, 'Question received. Our team reviews every question before passing it to a midshipman.');
+      document.getElementById('askForm').reset();
+    } else {
+      show(false, 'Something went wrong. Please try again.');
+    }
+  } catch (err) {
+    show(false, 'Could not send. Check your connection and try again.');
+  }
+  btn.disabled = false;
+});
+</script>
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* scroll progress */
+(function () {
+  const bar = document.getElementById('progress');
+  addEventListener('scroll', () => {
+    const h = document.documentElement;
+    bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  }, { passive: true });
+})();
+</script>
+<script>
+/* touch nav: tap toggles dropdowns instead of following the toggle link */
+(function () {
+  if (!matchMedia('(hover: none)').matches) return;
+  document.querySelectorAll('.nav-drop').forEach(d => {
+    d.querySelector('.drop-toggle').addEventListener('click', e => {
+      e.preventDefault();
+      const was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+      if (!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-drop')) document.querySelectorAll('.nav-drop.open').forEach(o => o.classList.remove('open'));
+  });
+})();
+</script>
+<!-- Navy 251st birthday banner: shows 13 Oct only -->
+<div id="navy-bday-banner" hidden style="
+  position:sticky;top:0;z-index:999;text-align:center;
+  background:#0a1628;color:#e8d9a8;font-size:.9rem;letter-spacing:.04em;
+  padding:.55rem 1rem;border-bottom:2px solid #c9a227;">
+  ⚓ U.S. Navy birthday — 251 years. 13 October 1775.
+  <button id="navy-bday-x" aria-label="Dismiss" style="
+    margin-left:.75rem;background:none;border:1px solid #c9a227;color:#e8d9a8;
+    border-radius:4px;cursor:pointer;padding:0 .4rem;">×</button>
+</div>
+<script>
+(function(){
+  var d = new Date();
+  if (d.getMonth() !== 9 || d.getDate() !== 13) return; /* Oct 13 only */
+  var b = document.getElementById('navy-bday-banner');
+  b.hidden = false;
+  document.getElementById('navy-bday-x').onclick = function(){ b.remove(); };
+})();
+</script>
+</body>
+</html>
