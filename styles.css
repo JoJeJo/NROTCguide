@@ -1,5 +1,5 @@
 /* NROTC Guide — field manual aesthetic. Deliberately NOT a SaaS template. */
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Special+Elite&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Staatliches&family=Special+Elite&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
   --paper: #f2efe4;
@@ -418,6 +418,10 @@ footer .disclaimer strong { color: var(--brass-light); }
 footer .fine { font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: "Special Elite", monospace; }
 footer .fine a { color: inherit; text-decoration: none; transition: color .2s; }
 footer .fine a:hover { color: var(--brass-light); }
+/* Buy Me a Coffee button — styled after BMC's official button, fitted to the site */
+footer .fine a.bmc-btn { display: inline-block; background: #162883; color: #fff; border: 1px solid rgba(255,255,255,.85); border-radius: 999px; padding: 5px 16px 7px; font-family: "Cookie", cursive; font-size: 19px; line-height: 1; letter-spacing: .3px; transition: background .2s, color .2s, transform .2s, border-color .2s; }
+footer .fine a.bmc-btn:hover { background: #FFDD00; color: #162883; border-color: #FFDD00; transform: translateY(-1px); }
+
 
 /* ---------- scroll progress ---------- */
 .progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--brass-light); width: 0; z-index: 100; }
